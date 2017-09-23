@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>my first blog | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 搭建博客过程中参考了大量博客，我觉得不错的有，在此十分感谢他们做的教程。 http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html http://blog.csdn.net/jzooo/article/detail">
+  <meta name="description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 在搭建博客中参考了大量博客，也遇到了很多坑。在这里指出自己搭建时遇到的坑1.配置node.js 和 git    配置这里的时候会有很多坑，推荐一个博客给大家    http://www.cnblogs.com/cherishzy/p/5694658.html2.配置_config.yml 中deplo">
 <meta name="keywords" content="杂记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my first blog">
 <meta property="og:url" content="http://yoursite.com/2017/09/22/my-first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 搭建博客过程中参考了大量博客，我觉得不错的有，在此十分感谢他们做的教程。 http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html http://blog.csdn.net/jzooo/article/detail">
-<meta property="og:updated_time" content="2017-09-23T03:18:17.855Z">
+<meta property="og:description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 在搭建博客中参考了大量博客，也遇到了很多坑。在这里指出自己搭建时遇到的坑1.配置node.js 和 git    配置这里的时候会有很多坑，推荐一个博客给大家    http://www.cnblogs.com/cherishzy/p/5694658.html2.配置_config.yml 中deplo">
+<meta property="og:updated_time" content="2017-09-23T03:40:43.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my first blog">
-<meta name="twitter:description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 搭建博客过程中参考了大量博客，我觉得不错的有，在此十分感谢他们做的教程。 http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html http://blog.csdn.net/jzooo/article/detail">
+<meta name="twitter:description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 在搭建博客中参考了大量博客，也遇到了很多坑。在这里指出自己搭建时遇到的坑1.配置node.js 和 git    配置这里的时候会有很多坑，推荐一个博客给大家    http://www.cnblogs.com/cherishzy/p/5694658.html2.配置_config.yml 中deplo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -169,7 +169,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <pre><code>花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。
-</code></pre><p>搭建博客过程中参考了大量博客，我觉得不错的有，在此十分感谢他们做的教程。<br> <a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a><br> <a href="http://blog.csdn.net/jzooo/article/details/46781805" target="_blank" rel="external">http://blog.csdn.net/jzooo/article/details/46781805</a><br> <a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="external">http://blog.csdn.net/gdutxiaoxu/article/details/53576018</a></p>
+</code></pre><p>在搭建博客中参考了大量博客，也遇到了很多坑。<br>在这里指出自己搭建时遇到的坑<br>1.配置node.js 和 git<br>    配置这里的时候会有很多坑，推荐一个博客给大家<br>    <a href="http://www.cnblogs.com/cherishzy/p/5694658.html" target="_blank" rel="external">http://www.cnblogs.com/cherishzy/p/5694658.html</a><br>2.配置_config.yml 中deploy部分中的repository<br>    正确写法是：git@github.com:xxxx/xxxxx.io.git<br>3.配置ssh key<br>    不要复制第一个文件，正确的rsa ssh key结尾是.pub<br>4.确定本地4000端口不被占用</p>
+<pre><code>选择用github和hexo搭建博客是出于想练习运维和督促自己学习，欢迎大家来我的博客玩。
+</code></pre><p> 参考博客：</p>
+<ol>
+<li><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a></li>
+<li><a href="http://www.cnblogs.com/linuxbug/p/5637002.html" target="_blank" rel="external">http://www.cnblogs.com/linuxbug/p/5637002.html</a></li>
+<li><a href="http://blog.csdn.net/whjkm/article/details/42675579" target="_blank" rel="external">http://blog.csdn.net/whjkm/article/details/42675579</a></li>
+</ol>
 
       
 
@@ -272,6 +279,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/09/23/说明/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          说明
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
