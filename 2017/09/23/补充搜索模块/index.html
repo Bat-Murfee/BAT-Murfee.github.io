@@ -317,6 +317,25 @@ window.YiliaChangyanWrap = function() {
 </script>
   
 
+ 
+  <section id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="补充缺少的搜索模块"></div>
+<script>
+  (function(){
+    var appid = '你的APP ID',
+    conf = '你的APP KEY';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script>    
+  </section>
   
 
   
@@ -422,11 +441,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color5">维护历程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">维护历程</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
             
             <div class="clearfix"></div>
