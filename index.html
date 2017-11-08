@@ -217,6 +217,108 @@
 
 
   
+    <article id="post-centos7命名修改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/centos7命名修改/">centos7网卡命名</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/22/centos7命名修改/" class="archive-article-date">
+  	<time datetime="2017-09-22T14:31:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>（之前一直使用centos6换用centos7之后配置网卡时出现了没有eth0这个设备的问题，检查后发现只有回还网卡和ens33。还好看到了这篇文章，分享给需要的人）
+
+
+
+以下内容转自：liwei0526vip 出处：http://www.cnblogs.com/liwei0526vip
+</code></pre><p>CentOS 7 网卡命名修改为eth0格式</p>
+<p>Linux 操作系统的网卡设备的传统命名方式是 eth0、eth1、eth2等，而 CentOS7 提供了不同的命名规则，默认是基于固件、拓扑、位置信息来分配。这样做的优点是命名全自动的、可预知的，缺点是比 eth0、wlan0 更难读，比如 ens33 。</p>
+<p>一、命名规则策略<br>规则1：</p>
+<p>对于板载设备命名合并固件或 BIOS 提供的索引号，如果来自固件或 BIOS 的信息可读就命名，比如eno1，这种命名是比较常见的，否则使用规则2。</p>
+<p>规则2：</p>
+<p>命名合并固件或 BIOS 提供的 PCI-E 热插拔口索引号，比如 ens1，如果信息可读就使用，否则使用规则3。</p>
+<p>规则3：</p>
+<p>命名合并硬件接口的物理位置，比如 enp2s0，可用就命名，失败直接到方案5。</p>
+<p>规则4：</p>
+<p>命名合并接口的 MAC 地址，比如 enx78e7d1ea46da，默认不使用，除非用户选择使用此方案。</p>
+<p>规则5：</p>
+<p>使用传统的方案，如果所有的方案都失败，使用类似 eth0 这样的样式。</p>
+<p>二、网卡名称字符含义<br>1、前2个字符的含义</p>
+<p>en　　以太网　　　　Ethernet<br>wl　　无线局域网　　WLAN<br>ww　  无线广域网　　WWAN<br>2、第3个字符根据设备类型选择</p>
+<p>o<index>           on-board device index number<br>s<slot>            hotplug slot index number<br>x<mac>             MAC address<br>p<bus>s<slot>      PCI geographical location<br>p<bus>s<slot>      USB port number chain</slot></bus></slot></bus></mac></slot></index></p>
+<p>三、修改网卡名称样式为ethx<br>如果不习惯使用新的命名规则，可以恢复使用传统的方式命名，编辑 grub 文件，增加两个变量，再使用 grub2-mkconfig 重新生成 grub 配置文件即可。</p>
+<p>1、编辑 grub 配置文件</p>
+<p>vim /etc/sysconfig/grub   # 其实是/etc/default/grub的软连接</p>
+<h1 id="为GRUB-CMDLINE-LINUX变量增加2个参数，具体内容如下-加粗-："><a href="#为GRUB-CMDLINE-LINUX变量增加2个参数，具体内容如下-加粗-：" class="headerlink" title="为GRUB_CMDLINE_LINUX变量增加2个参数，具体内容如下(加粗)："></a>为GRUB_CMDLINE_LINUX变量增加2个参数，具体内容如下(加粗)：</h1><p>GRUB_CMDLINE_LINUX=”crashkernel=auto rd.lvm.lv=cl/root rd.lvm.lv=cl/swap net.ifnames=0 biosdevname=0 rhgb quiet”<br>2、重新生成 grub 配置文件</p>
+<p>grub2-mkconfig -o /boot/grub2/grub.cfg<br>然后重新启动 Linux 操作系统，通过 ip addr 可以看到网卡名称已经变为 eth0 。</p>
+<p>3、修改网卡配置文件</p>
+<p>原来网卡配置文件名称为 ifcfg-ens33，这里需要修改为 ethx 的格式，并适当调整网卡配置文件。</p>
+<p>mv /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<h1 id="修改ifcfg-eth0文件如下内容-其它内容不变"><a href="#修改ifcfg-eth0文件如下内容-其它内容不变" class="headerlink" title="修改ifcfg-eth0文件如下内容(其它内容不变)"></a>修改ifcfg-eth0文件如下内容(其它内容不变)</h1><p>NAME=eth0<br>DEVICE=eth0<br>[root@localhost ~]# systemctl restart network.service    # 重启网络服务<br>注意：ifcfg-ens33 文件最好删除掉，否则重启 network 服务时候会报错。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/22/centos7命名修改/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

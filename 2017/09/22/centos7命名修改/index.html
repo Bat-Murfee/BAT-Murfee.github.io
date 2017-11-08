@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>my first blog | CNMXK</title>
+  <title>centos7网卡命名 | CNMXK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 在搭建博客中参考了大量博客，也遇到了很多坑。在这里指出自己搭建时遇到的坑1.配置node.js 和 git    配置这里的时候会有很多坑，推荐一个博客给大家    http://www.cnblogs.com/cherishzy/p/5694658.html2.配置_config.yml 中deplo">
+  <meta name="description" content="（之前一直使用centos6换用centos7之后配置网卡时出现了没有eth0这个设备的问题，检查后发现只有回还网卡和ens33。还好看到了这篇文章，分享给需要的人）    以下内容转自：liwei0526vip 出处：http://www.cnblogs.com/liwei0526vip CentOS 7 网卡命名修改为eth0格式 Linux 操作系统的网卡设备的传统命名方式是 eth0、et">
 <meta name="keywords" content="杂记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="my first blog">
-<meta property="og:url" content="http://yoursite.com/2017/09/22/my-first-blog/index.html">
+<meta property="og:title" content="centos7网卡命名">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/centos7命名修改/index.html">
 <meta property="og:site_name" content="CNMXK">
-<meta property="og:description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 在搭建博客中参考了大量博客，也遇到了很多坑。在这里指出自己搭建时遇到的坑1.配置node.js 和 git    配置这里的时候会有很多坑，推荐一个博客给大家    http://www.cnblogs.com/cherishzy/p/5694658.html2.配置_config.yml 中deplo">
-<meta property="og:updated_time" content="2017-10-12T14:37:27.006Z">
+<meta property="og:description" content="（之前一直使用centos6换用centos7之后配置网卡时出现了没有eth0这个设备的问题，检查后发现只有回还网卡和ens33。还好看到了这篇文章，分享给需要的人）    以下内容转自：liwei0526vip 出处：http://www.cnblogs.com/liwei0526vip CentOS 7 网卡命名修改为eth0格式 Linux 操作系统的网卡设备的传统命名方式是 eth0、et">
+<meta property="og:updated_time" content="2017-11-08T07:21:53.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="my first blog">
-<meta name="twitter:description" content="花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。 在搭建博客中参考了大量博客，也遇到了很多坑。在这里指出自己搭建时遇到的坑1.配置node.js 和 git    配置这里的时候会有很多坑，推荐一个博客给大家    http://www.cnblogs.com/cherishzy/p/5694658.html2.配置_config.yml 中deplo">
+<meta name="twitter:title" content="centos7网卡命名">
+<meta name="twitter:description" content="（之前一直使用centos6换用centos7之后配置网卡时出现了没有eth0这个设备的问题，检查后发现只有回还网卡和ens33。还好看到了这篇文章，分享给需要的人）    以下内容转自：liwei0526vip 出处：http://www.cnblogs.com/liwei0526vip CentOS 7 网卡命名修改为eth0格式 Linux 操作系统的网卡设备的传统命名方式是 eth0、et">
   
     <link rel="alternative" href="/atom.xml" title="CNMXK" type="application/atom+xml">
   
@@ -148,19 +148,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-my-first-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-centos7命名修改" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      my first blog
+      centos7网卡命名
     </h1>
   
 
         
-        <a href="/2017/09/22/my-first-blog/" class="archive-article-date">
+        <a href="/2017/09/22/centos7命名修改/" class="archive-article-date">
   	<time datetime="2017-09-22T14:31:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
 </a>
         
@@ -168,15 +168,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>花费了三小时，总算是将自己的Blog在hexo上搭建完成了，以后每周末会更新最近所学习的知识。
-</code></pre><p>在搭建博客中参考了大量博客，也遇到了很多坑。<br>在这里指出自己搭建时遇到的坑<br>1.配置node.js 和 git<br>    配置这里的时候会有很多坑，推荐一个博客给大家<br>    <a href="http://www.cnblogs.com/cherishzy/p/5694658.html" target="_blank" rel="external">http://www.cnblogs.com/cherishzy/p/5694658.html</a><br>2.配置_config.yml 中deploy部分中的repository<br>    正确写法是：git@github.com:xxxx/xxxxx.io.git<br>3.配置ssh key<br>    不要复制第一个文件，正确的rsa ssh key结尾是.pub<br>4.确定本地4000端口不被占用</p>
-<pre><code>选择用github和hexo搭建博客是出于想练习运维和督促自己学习，欢迎大家来我的博客玩。
-</code></pre><p> 参考博客：</p>
-<ol>
-<li><a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a></li>
-<li><a href="http://www.cnblogs.com/linuxbug/p/5637002.html" target="_blank" rel="external">http://www.cnblogs.com/linuxbug/p/5637002.html</a></li>
-<li><a href="http://blog.csdn.net/whjkm/article/details/42675579" target="_blank" rel="external">http://blog.csdn.net/whjkm/article/details/42675579</a></li>
-</ol>
+        <pre><code>（之前一直使用centos6换用centos7之后配置网卡时出现了没有eth0这个设备的问题，检查后发现只有回还网卡和ens33。还好看到了这篇文章，分享给需要的人）
+
+
+
+以下内容转自：liwei0526vip 出处：http://www.cnblogs.com/liwei0526vip
+</code></pre><p>CentOS 7 网卡命名修改为eth0格式</p>
+<p>Linux 操作系统的网卡设备的传统命名方式是 eth0、eth1、eth2等，而 CentOS7 提供了不同的命名规则，默认是基于固件、拓扑、位置信息来分配。这样做的优点是命名全自动的、可预知的，缺点是比 eth0、wlan0 更难读，比如 ens33 。</p>
+<p>一、命名规则策略<br>规则1：</p>
+<p>对于板载设备命名合并固件或 BIOS 提供的索引号，如果来自固件或 BIOS 的信息可读就命名，比如eno1，这种命名是比较常见的，否则使用规则2。</p>
+<p>规则2：</p>
+<p>命名合并固件或 BIOS 提供的 PCI-E 热插拔口索引号，比如 ens1，如果信息可读就使用，否则使用规则3。</p>
+<p>规则3：</p>
+<p>命名合并硬件接口的物理位置，比如 enp2s0，可用就命名，失败直接到方案5。</p>
+<p>规则4：</p>
+<p>命名合并接口的 MAC 地址，比如 enx78e7d1ea46da，默认不使用，除非用户选择使用此方案。</p>
+<p>规则5：</p>
+<p>使用传统的方案，如果所有的方案都失败，使用类似 eth0 这样的样式。</p>
+<p>二、网卡名称字符含义<br>1、前2个字符的含义</p>
+<p>en　　以太网　　　　Ethernet<br>wl　　无线局域网　　WLAN<br>ww　  无线广域网　　WWAN<br>2、第3个字符根据设备类型选择</p>
+<p>o<index>           on-board device index number<br>s<slot>            hotplug slot index number<br>x<mac>             MAC address<br>p<bus>s<slot>      PCI geographical location<br>p<bus>s<slot>      USB port number chain</slot></bus></slot></bus></mac></slot></index></p>
+<p>三、修改网卡名称样式为ethx<br>如果不习惯使用新的命名规则，可以恢复使用传统的方式命名，编辑 grub 文件，增加两个变量，再使用 grub2-mkconfig 重新生成 grub 配置文件即可。</p>
+<p>1、编辑 grub 配置文件</p>
+<p>vim /etc/sysconfig/grub   # 其实是/etc/default/grub的软连接</p>
+<h1 id="为GRUB-CMDLINE-LINUX变量增加2个参数，具体内容如下-加粗-："><a href="#为GRUB-CMDLINE-LINUX变量增加2个参数，具体内容如下-加粗-：" class="headerlink" title="为GRUB_CMDLINE_LINUX变量增加2个参数，具体内容如下(加粗)："></a>为GRUB_CMDLINE_LINUX变量增加2个参数，具体内容如下(加粗)：</h1><p>GRUB_CMDLINE_LINUX=”crashkernel=auto rd.lvm.lv=cl/root rd.lvm.lv=cl/swap net.ifnames=0 biosdevname=0 rhgb quiet”<br>2、重新生成 grub 配置文件</p>
+<p>grub2-mkconfig -o /boot/grub2/grub.cfg<br>然后重新启动 Linux 操作系统，通过 ip addr 可以看到网卡名称已经变为 eth0 。</p>
+<p>3、修改网卡配置文件</p>
+<p>原来网卡配置文件名称为 ifcfg-ens33，这里需要修改为 ethx 的格式，并适当调整网卡配置文件。</p>
+<p>mv /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<h1 id="修改ifcfg-eth0文件如下内容-其它内容不变"><a href="#修改ifcfg-eth0文件如下内容-其它内容不变" class="headerlink" title="修改ifcfg-eth0文件如下内容(其它内容不变)"></a>修改ifcfg-eth0文件如下内容(其它内容不变)</h1><p>NAME=eth0<br>DEVICE=eth0<br>[root@localhost ~]# systemctl restart network.service    # 重启网络服务<br>注意：ifcfg-ens33 文件最好删除掉，否则重启 network 服务时候会报错。</p>
 
       
 
@@ -246,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/22/my-first-blog/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/22/centos7命名修改/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,15 +280,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/22/centos7命名修改/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/23/说明/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          centos7网卡命名
+          说明
         
       </div>
     </a>
   
+  
+    <a href="/2017/09/22/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">my first blog</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -297,7 +322,7 @@
  
 
   
-  <div id="SOHUCS" sid="my-first-blog" ></div> 
+  <div id="SOHUCS" sid="centos7命名修改" ></div> 
 <script type="text/javascript"> 
 window.YiliaChangyanWrap = function() {
     var appid = "cytgfobwW"; 
@@ -312,7 +337,7 @@ window.YiliaChangyanWrap = function() {
  
   <section id="comments">
 <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS" sid="my first blog"></div>
+<div id="SOHUCS" sid="centos7网卡命名"></div>
 <script>
   (function(){
     var appid = 'cytgfobwW',
